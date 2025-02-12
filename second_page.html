@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Juliana only 😊</title>
+    <link href="second_page.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Solitreo' rel='stylesheet'>
+    <div class="container" onclick="toggleCard()">
+        <div class="envelope"></div>
+        <div class="card hidden">
+            <p>
+                Hello po, sorry kung ganito ang mababasa mo ngayon. Sorry rin kung ganitong paraan ako magsasabi ng nararamdaman ko. Hindi ko rin kasi masabi directly kanina kasi ayaw kong ma-spoil yung kasiyahan mo kaninang umaga.
+            </p>
+            <p>
+                Hindi ko sure kung OA lang ang reaction ko kagabi, pero hindi ko mapigilang mag-worry sa'yo. Bigla ka kasing hindi nag-message at naglalakad pa kayo past midnight, medyo lasing ka pa noon. Hindi talaga ako nakatulog kasi hindi ko alam kung safe ka bang nakauwi.
+            </p>
+            <p>
+                Gumagawa lang ako ng ganitong letter for me kasi ito lang paraan ko para ma-ease ang nararamdaman ko ngayon. Nahihirapan din kasi akong labanan kapag ganitong feeling ang nararamdaman ko. Sorry po talaga kung ganitong message ang mababasa mo ngayon. I didn't intend na ito ang ipapabasa ko sa'yo.
+            </p>
+            <p>
+                And i actually made letter for you this valentine's, if you are free please feel to read it po. 
+            </p>
+            <div class="heart"></div>
+        </div>
+        <div class="cover"></div>
+        <div class="lid closed"></div>
+        <div class="shadow"></div>
+        <button id="action-button" class="action-button" onclick="window.location.href='https://dlappay.github.io/14/'">
+            Continue ❤️
+        </button>
+    </div>
+    <script>
+        function toggleCard() {
+            const lid = document.querySelector('.lid');
+            const card = document.querySelector('.card');
+            const button = document.querySelector('.action-button');
+
+            if (lid.classList.contains('open')) {
+                lid.classList.remove('open');
+                lid.classList.add('closed');
+                card.classList.remove('visible');
+                card.classList.add('hidden');
+                button.style.opacity = '0'; // Hide button
+                button.style.pointerEvents = 'none';
+            } else {
+                lid.classList.remove('closed');
+                lid.classList.add('open');
+                card.classList.remove('hidden');
+                card.classList.add('visible');
+                button.style.opacity = '1'; // Show button
+                button.style.pointerEvents = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>

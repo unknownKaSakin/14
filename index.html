@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Juliana only 😊</title>
+    <link rel="stylesheet" href="first_page.css">
+</head>
+<body>
+    <div class="valentines-day-card">
+        <input id="open" type="checkbox">
+        <label class="open" for="open"></label>
+        <div class="card-front">
+            <div class="note">Click to Open</div>
+        </div>
+        
+        <div class="card-inside">
+            <div class="text-one">Happy Valentine's Day Juliana</div>
+            <div class="heart"></div>
+            <div class="smile"></div>
+            <div class="eyes"></div>
+        </div>
+    </div>
+
+    <!-- Button outside the card -->
+    <button id="action-button" class="action-button" onclick="window.location.href='second_page.html'">
+        Continue ❤️
+    </button>
+
+    <script>
+        // Get references to checkbox and button
+        const checkbox = document.getElementById("open");
+        const button = document.getElementById("action-button");
+
+        // Initially hide the button
+        button.style.display = "none";
+
+        // Listen for checkbox state changes
+        checkbox.addEventListener("change", function() {
+            if (this.checked) {
+                button.style.display = "block"; // Show button when card is open
+            } else {
+                button.style.display = "none"; // Hide button when card is closed
+            }
+        });
+    </script>
+</body>
+</html>

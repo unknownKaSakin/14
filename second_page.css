@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: Solitreo;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #fee2e9;
+    font-family: "Pangolin", cursive;
+    font-size: 1.5vmin; /* Slightly larger font size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    top: 10vmin;
+    cursor: pointer;
+}
+
+.envelope {
+    position: relative;
+    background: #f980a1;
+    height: 40vmin; /* Increased height */
+    width: 63.9vmin; /* Increased width */
+}
+
+.card {
+    position: absolute;
+    background: white;
+    height: 35vmin; /* Increased height */
+    width: 57vmin; /* Increased width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 3.5vmin;
+    top: -3vmin;
+    transform: translateY(-20vmin); /* Adjusted for new size */
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 3vmin;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card.hidden {
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.card.visible {
+    transform: translateY(-25vmin);
+    opacity: 2;
+}
+
+.cover {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 20vmin solid #fba7bd; /* Adjusted dimensions */
+    border-left: 32vmin solid transparent;
+    border-right: 32vmin solid transparent;
+    top: 20vmin; /* Adjusted for new size */
+    z-index: 3;
+}
+
+.cover::after {
+    position: absolute;
+    content: "";
+    border-left: 32.5vmin solid #fcbbcc;
+    border-bottom: 20vmin solid transparent;
+    border-top: 20vmin solid transparent;
+    top: -20vmin;
+    left: -32vmin;
+}
+
+.cover::before {
+    position: absolute;
+    content: "";
+    border-right: 32.5vmin solid #fcbbcc;
+    border-bottom: 20vmin solid transparent;
+    border-top: 20vmin solid transparent;
+    top: -20vmin;
+    left: -0.5vmin;
+}
+
+.lid {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 20vmin solid #f980a1; /* Adjusted size */
+    border-left: 32vmin solid transparent;
+    border-right: 32vmin solid transparent;
+    top: 0;
+    transform-origin: top;
+    transition: transform 0.5s ease;
+}
+
+
+.lid.closed {
+    transform: rotateX(0deg);
+}
+
+.lid.open {
+    transform: rotateX(180deg);
+}
+
+.shadow {
+    position: relative;
+    top: 4vmin; /* Adjusted for proportion */
+    border-radius: 50%;
+    opacity: 0.7;
+    height: 3vmin; /* Increased size */
+    width: 64vmin; /* Increased width */
+    background: #e8c5d0;
+}
+
+.heart {
+    position: relative;
+    width: 5vmin;
+    height: 4vmin;
+    top: 5vmin;
+    left: -1vmin;
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 2.5vmin;
+    top: 7vim;
+    width: 2.5vmin;
+    height: 4vmin;
+    background: #f40b4a;
+    border-radius: 2.5vmin 2.5vmin 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.action-button {
+    position: absolute;
+    bottom: -5vmin; /* Position the button closer to the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f980a1;
+    color: white;
+    font-family: "Pangolin", cursive;
+    font-size: 2vmin;
+    padding: 1vmin 3vmin;
+    border: none;
+    border-radius: 2vmin;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateX(-50%) scale(1.05); /* Add a slight zoom on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.action-button:active {
+    transform: translateX(-50%) scale(0.95); /* Shrink slightly on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
